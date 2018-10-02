@@ -227,7 +227,11 @@ public class GeoFragment extends Fragment implements OnMapReadyCallback, GoogleA
 
     @Override
     public void onPlaceSelected(Place place) {
-        Log.i("Selected Place: ", "Place Selected: " + place.getName());
+        Log.d("Selected Place: ", "Place Selected: " + place.getName());
+        LatLng mLatLng = place.getLatLng();
+        mGoogleMap.clear();
+        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mLatLng, DEFAULT_ZOOM));
+        mGoogleMap.addMarker(new MarkerOptions().position(mLatLng));
     }
 
     @Override
