@@ -3,4 +3,18 @@
 
     <string name="monitor">Monitor Your Crops!</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_home">Home</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_home">Home</string>
+    <string name="title_market">Market Prices</string>
+    <string name="title_alerts">Alerts</string>
+    <string name="title_helpline">Helpline</string>
+    <string name="title_cropping">Crops And Land</string>
+
+    <string name="weather">Weather</string>
+    <string name="recent_alerts">Recent Alerts</string>
 </resources>
