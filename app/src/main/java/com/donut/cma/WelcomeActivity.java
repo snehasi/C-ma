@@ -17,14 +17,8 @@ public class WelcomeActivity extends Activity {
     }
 
     public void onSetupClick(View view) {
-        SharedPreferences sharedPreferences = getSharedPreferences(Constants.PREF_FILE, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Intent intent = new Intent(WelcomeActivity.this, WelCropActivity.class);
 
-        editor.putBoolean(Constants.PREF_KEY.setup_done, true);
-
-        editor.commit();
-
-        Intent intent = new Intent(WelcomeActivity.this, HomeActivity.class);
         startActivity(intent);
     }
 }

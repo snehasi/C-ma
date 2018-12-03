@@ -21,13 +21,16 @@ public class MainActivity extends Activity {
             @Override
             public void run() {
                 Intent intent;
-                if (!sharedPreferences.getBoolean(Constants.PREF_KEY.setup_done, false)) {
+                if (!sharedPreferences.getBoolean(Constants.PREF_KEY.setup_done, false) || Constants.DEBUG) {
                     intent = new Intent(MainActivity.this, WelcomeActivity.class);
                 }
                 else
                 {
                     intent = new Intent(MainActivity.this, HomeActivity.class);
                 }
+
+                intent.setFlags(intent.getFlags());
+
                 startActivity(intent);
             }
         }, Constants.SPLASH_TIMEOUT);

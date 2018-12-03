@@ -4,6 +4,7 @@
     package="com.donut.cma">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -16,6 +17,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".MainActivity"
+            android:noHistory="true"
             android:theme="@android:style/Theme.Light.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,7 +39,13 @@
             android:name=".FetchAddressIntentService"
             android:exported="false" />
 
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".HomeActivity" />
+        <activity
+            android:name=".WelCropActivity"
+            android:label="@string/choose_crops" />
+        <activity
+            android:name=".CitySelectActivity"
+            android:label="@string/choose_city" />
     </application>
 
 </manifest>

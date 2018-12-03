@@ -4,7 +4,13 @@
     <string name="setup">Setup</string>
     <string name="welcome_text">Welcome to C-ma</string>
 
-    <string name="monitor">Monitor Your Crops!</string>
+    <string name="monitor">Monitor your Crops</string>
+    <string name="choose">Choose</string>
+
+    <string name="choose_city">Choose Your City</string>
+
+    <string name="choose_crops">Choose your Crops</string>
+
     <string name="set_location">Set Location</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -19,4 +25,27 @@
 
     <string name="weather">Weather</string>
     <string name="recent_alerts">Recent Alerts</string>
+
+    <string-array name="crops_array">
+        <item>Crop 1</item>
+        <item>Crop 2</item>
+        <item>Crop 3</item>
+        <item>Crop 4</item>
+        <item>Crop 5</item>
+        <item>Crop 6</item>
+        <item>Crop 7</item>
+        <item>Crop 8</item>
+        <item>Crop 9</item>
+        <item>Crop 10</item>
+        <item>Crop 11</item>
+        <item>Crop 12</item>
+        <item>Crop 13</item>
+        <item>Crop 14</item>
+        <item>Crop 15</item>
+        <item>Crop 16</item>
+        <item>Crop 17</item>
+        <item>Crop 18</item>
+        <item>Crop 19</item>
+        <item>Crop 20</item>
+    </string-array>
 </resources>

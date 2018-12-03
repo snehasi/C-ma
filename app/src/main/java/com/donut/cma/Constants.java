@@ -4,8 +4,13 @@ public class Constants {
     public static final int SPLASH_TIMEOUT = 1000;
     public static final String PREF_FILE = "preferences";
 
+    public static final Boolean DEBUG = true;
+    public static final Boolean CITY_SELECT_PLACES= false;
+
     public class PREF_KEY {
         public static final String setup_done = "setup_done";
+        public static final String user_city = "user_city";
+        public static final String user_crops = "user_crops";
     }
 
     // Ritu
