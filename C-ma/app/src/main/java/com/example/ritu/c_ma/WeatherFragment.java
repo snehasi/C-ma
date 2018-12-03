@@ -43,6 +43,7 @@ public class WeatherFragment extends Fragment {
         detailsField = (TextView)rootView.findViewById(R.id.details_field);
         currentTemperatureField = (TextView)rootView.findViewById(R.id.current_temperature_field);
         weatherIcon = (TextView)rootView.findViewById(R.id.weather_icon);
+        weatherIcon.setTypeface(weatherFont);
 
         return rootView;
     }
@@ -50,6 +51,7 @@ public class WeatherFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        weatherFont = Typeface.createFromAsset(getActivity().getAssets(), "weather.ttf");
         updateWeatherData(new CityPreference(getActivity()).getCity());
     }
 
