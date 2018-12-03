@@ -16,7 +16,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class CityPreference extends AppCompatActivity{
+public class CityPreference {
 
     SharedPreferences prefs;
     GoogleApiClient mGoogleApiClient;
@@ -24,16 +24,6 @@ public class CityPreference extends AppCompatActivity{
     public CityPreference(Activity activity){
         prefs = activity.getPreferences(Activity.MODE_PRIVATE);
 
-        if (mGoogleApiClient == null) {
-            mGoogleApiClient = new GoogleApiClient.Builder(this)
-                    .addConnectionCallbacks(this)
-                    .addOnConnectionFailedListener(this)
-                    .addApi(LocationServices.API)
-                    .build();
-        }
-        if (mGoogleApiClient != null) {
-            mGoogleApiClient.connect();
-        }
     }
 
 
@@ -50,4 +40,8 @@ public class CityPreference extends AppCompatActivity{
     void setCity(String city){
         prefs.edit().putString("city", city).commit();
     }
+
+
+
+
 }
