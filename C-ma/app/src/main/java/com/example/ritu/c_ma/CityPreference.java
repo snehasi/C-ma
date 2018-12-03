@@ -5,12 +5,41 @@ package com.example.ritu.c_ma;
  */
 import android.app.Activity;
 import android.content.SharedPreferences;
-public class CityPreference {
+import android.location.Location;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+public class CityPreference extends AppCompatActivity{
+
     SharedPreferences prefs;
+    GoogleApiClient mGoogleApiClient;
 
     public CityPreference(Activity activity){
         prefs = activity.getPreferences(Activity.MODE_PRIVATE);
+
+        if (mGoogleApiClient == null) {
+            mGoogleApiClient = new GoogleApiClient.Builder(this)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .addApi(LocationServices.API)
+                    .build();
+        }
+        if (mGoogleApiClient != null) {
+            mGoogleApiClient.connect();
+        }
     }
+
+
+
+
+
 
     // If the user has not chosen a city yet, return
     // Sydney as the default city
