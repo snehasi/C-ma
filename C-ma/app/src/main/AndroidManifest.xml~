@@ -18,10 +18,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".GeoActivity"
-            android:label="@string/app_name">
+            android:name=".MainActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        
+        <activity
+            android:name=".WelcomeActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        
+        <activity
+            android:name=".GeoActivity"
+            android:label="@string/app_name"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -46,6 +58,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+
+        <activity android:name=".WeatherActivity">
+
         </activity>
     </application>
 

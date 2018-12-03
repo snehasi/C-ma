@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">C-ma</string>
+    <string name="splash_logo">Splash Logo</string>
+    <string name="setup">Setup</string>
+    <string name="welcome_text">Welcome to C-ma</string>
 
     <string name="monitor">Monitor Your Crops!</string>
     <string name="title_activity_maps">Map</string>
@@ -17,7 +20,7 @@
 
     <string name="weather">Weather</string>
     <string name="recent_alerts">Recent Alerts</string>
-    
+
     <string name="change_city">Change city</string>
 
     <!-- Put your own APP ID here -->
@@ -34,4 +37,8 @@
     <string name="weather_drizzle">&#xf01c;</string>
 
     <string name="place_not_found">Sorry, no weather data found.</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
