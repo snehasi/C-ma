@@ -6,4 +6,4 @@
     android:layout_height="match_parent"
     tools:context=".WeatherActivity"
     tools:ignore="MergeRootFrame"
-    android:background="#FF0099CC" />
+    android:textColor="#00574B" />

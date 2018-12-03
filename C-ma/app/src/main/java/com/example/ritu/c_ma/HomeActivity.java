@@ -9,6 +9,7 @@ import android.support.v7.widget.CardView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
@@ -42,6 +43,10 @@ public class HomeActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        ImageView iv = (ImageView) findViewById(R.id.iv_weather);
+        iv.setImageResource(R.drawable.weather_image);
+
 
         CardView cv = (CardView) findViewById(R.id.weather_card);
         cv.setOnClickListener(new View.OnClickListener() {
