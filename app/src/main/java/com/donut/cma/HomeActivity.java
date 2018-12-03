@@ -1,15 +1,22 @@
 package com.donut.cma;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity
+        implements HomeFragment.OnFragmentInteractionListener,
+        CropsFragment.OnFragmentInteractionListener,
+        HelplineFragment.OnFragmentInteractionListener,
+        MarketFragment.OnFragmentInteractionListener,
+        AlertsFragment.OnFragmentInteractionListener {
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -17,30 +24,54 @@ public class HomeActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment = null;
+
             switch (item.getItemId()) {
                 case R.id.helpline:
-                    return true;
+                    fragment = new HelplineFragment();
+                    break;
                 case R.id.crops:
-                    return true;
+                    fragment = new CropsFragment();
+                    break;
                 case R.id.navigation_home:
-                    return true;
+                    fragment = new HomeFragment();
+                    break;
                 case R.id.market_prices:
-                    return true;
+                    fragment = new MarketFragment();
+                    break;
                 case R.id.alerts:
-                    return true;
+                    fragment = new AlertsFragment();
+                    break;
             }
-            return false;
+            return loadFragment(fragment);
         }
     };
+
+    private Boolean loadFragment(Fragment fragment)
+    {
+        if (fragment != null)
+        {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+            return true;
+        }
+
+        return false;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        loadFragment(new HomeFragment());
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        navigation.getMenu().getItem(2).setChecked(true);
     }
 
     @Override
@@ -54,5 +85,10 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

@@ -21,7 +21,7 @@
     <string name="title_market">Market Prices</string>
     <string name="title_alerts">Alerts</string>
     <string name="title_helpline">Helpline</string>
-    <string name="title_cropping">Crops And Land</string>
+    <string name="title_cropping">Crops</string>
 
     <string name="weather">Weather</string>
     <string name="recent_alerts">Recent Alerts</string>
@@ -48,4 +48,7 @@
         <item>Crop 19</item>
         <item>Crop 20</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
