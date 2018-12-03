@@ -43,7 +43,7 @@ public class CropPriceAdapter extends RecyclerView.Adapter<CropPriceAdapter.MyVi
         CropPrices c = cropPriceList.get(i);
         myViewHolder.name.setText(c.commodity);
         myViewHolder.date.setText("On "+c.arrival_date);
-        myViewHolder.min.setText("Min Price : Rs"+c.min_price);
+        myViewHolder.min.setText("Min Price : Rs"+c.min_price+"/100Kg");
         //myViewHolder.max.setText("Max Price : Rs"+c.max_price);
         myViewHolder.mode.setText("Common Price : Rs"+c.modal_price);
         myViewHolder.location.setText("In "+c.thestate+","+c.district+","+c.market);
