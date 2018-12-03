@@ -51,7 +51,8 @@ public class HomeActivity extends AppCompatActivity {
         CardView cv = (CardView) findViewById(R.id.weather_card);
         cv.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this,WeatherActivity.class));
+                startActivity(new Intent(HomeActivity.this, WeatherActivity.class));
+//                startActivity(new Intent(HomeActivity.this,WeatherActivity.class));
             }
         });
 

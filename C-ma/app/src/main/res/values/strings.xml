@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">C-ma</string>
 
+    <string name="splash_logo">Splash Logo</string>
+    <string name="setup">Setup</string>
+    <string name="welcome_text">Welcome to C-ma</string>
+
     <string name="monitor">Monitor Your Crops!</string>
+    <string name="set_location">Set Location</string>
+
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_home">Home</string>
 

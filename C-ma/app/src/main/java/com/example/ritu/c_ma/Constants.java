@@ -1,6 +1,8 @@
 package com.example.ritu.c_ma;
 
 public final class Constants {
+    public static final int SPLASH_TIMEOUT = 1000;
+
     public static final String PREF_FILE = "preferences";
     public static final int SUCCESS_RESULT = 0;
     public static final int FAILURE_RESULT = 1;
@@ -13,4 +15,6 @@ public final class Constants {
         public static final String setup_done = "setup_done";
         public static final String user_city = "user_city";
     }
+
+
 }

@@ -13,6 +13,8 @@ import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.List;
@@ -30,11 +32,19 @@ public class LocationActivity extends AppCompatActivity implements LocationListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(this,Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+        Toast.makeText(this, "In Location Activity", Toast.LENGTH_SHORT).show();
             return ;
         }
-        Location location = locationManager.getLastKnownLocation(locationManager.NETWORK_PROVIDER);
+        Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+        if(location == null){
+            Log.i("tag", "it's null");
+        }
         onLocationChanged(location);
+
+        loc_function();
+
     }
 
 
@@ -62,9 +72,9 @@ public class LocationActivity extends AppCompatActivity implements LocationListe
     }
 
 
-    public String loc_function(Context context){
+    public String loc_function(){
         try{
-            Geocoder geocoder = new Geocoder(context);
+            Geocoder geocoder = new Geocoder(this);
             List<Address> address = null;
             address = geocoder.getFromLocation(latitude,longitude,1);
 
@@ -72,15 +82,17 @@ public class LocationActivity extends AppCompatActivity implements LocationListe
             country = address.get(0).getCountryCode();
             String state = address.get(0).getAdminArea();
             x = city + ", " + country;
+
             SharedPreferences sharedPreferences = getSharedPreferences(Constants.PREF_FILE, Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString(Constants.PREF_KEY.user_city,x);
             editor.commit();
+
         }
         catch(IOException e){
             e.printStackTrace();
         }
-        //startActivity(new Intent(LocationActivity.this,WeatherActivity.class));
+        startActivity(new Intent(LocationActivity.this,WeatherActivity.class));
         return x;
 
     }
