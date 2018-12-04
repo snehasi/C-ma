@@ -4,6 +4,9 @@ public class Constants {
     public static final int SPLASH_TIMEOUT = 1000;
     public static final String PREF_FILE = "preferences";
 
+    public static final String SERVER = "http://192.168.32.172:1234";
+    public static final String CROPS_URL = SERVER + "/crops";
+
     public static final Boolean DEBUG = true;
     public static final Boolean CITY_SELECT_PLACES= false;
 
