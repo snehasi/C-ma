@@ -42,6 +42,7 @@
         <activity android:name=".HomeActivity" />
         <activity
             android:name=".WelCropActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan"
             android:label="@string/choose_crops" />
         <activity
             android:name=".CitySelectActivity"

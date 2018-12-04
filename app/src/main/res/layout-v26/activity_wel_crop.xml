@@ -20,8 +20,8 @@
             android:layout_height="0dp"
             android:layout_weight="0.1"
             android:ems="1"
-            android:inputType="textPersonName"
             android:paddingHorizontal="20dp"
+            android:inputType="textPersonName"
             android:hint="@string/search" />
 
         <ListView

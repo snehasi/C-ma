@@ -5,9 +5,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -20,6 +23,7 @@ public class WelCropActivity extends AppCompatActivity {
     public ListView listView;
     public ArrayAdapter<String> adapter;
     public SharedPreferences sharedPreferences;
+    public EditText cropSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,25 @@ public class WelCropActivity extends AppCompatActivity {
                     listView.setItemChecked(i, true);
                 }
         }
+
+        cropSearch = (EditText) findViewById(R.id.cropSearch);
+
+        cropSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                WelCropActivity.this.adapter.getFilter().filter(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     public void onChooseClick(View view)
@@ -75,7 +98,6 @@ public class WelCropActivity extends AppCompatActivity {
         if (Constants.DEBUG)
         {
             Toast.makeText(this, "Crops saved", Toast.LENGTH_SHORT).show();
-
         }
 
         Intent intent;
