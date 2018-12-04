@@ -16,6 +16,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         final SharedPreferences sharedPreferences = this.getSharedPreferences(Constants.PREF_FILE, Context.MODE_PRIVATE);
+        
 
         new Handler().postDelayed(new Runnable() {
             @Override
