@@ -57,6 +57,11 @@ public class MainFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.main_fragment, container,false);
 
+        CropPriceList=new ArrayList<>();
+        CropPrices c=new CropPrices("TimeStamp","State","District","Market","Commodity","Variety","Arrival Date","Min Price","Max Price","Modal Price");
+        CropPriceList.add(c);
+
+
         Button button1 = (Button) rootView.findViewById(R.id.button);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,6 +147,7 @@ public class MainFragment extends Fragment {
             File file=new File(getActivity().getFilesDir(), "marketPricesData.csv");
             FileOutputStream fos = new FileOutputStream(file);
             while ((length = dis.read(buffer))>0) {
+
                 fos.write(buffer, 0, length);
                 Log.i("Wrote to file", String.valueOf(length));
             }
