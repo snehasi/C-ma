@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity
                     fragment = new HomeFragment();
                     break;
                 case R.id.market_prices:
-                    fragment = new MarketFragment();
+                    fragment = new MainFragment();
                     break;
                 case R.id.alerts:
                     fragment = new AlertsFragment();

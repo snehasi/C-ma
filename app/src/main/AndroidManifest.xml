@@ -6,6 +6,15 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -43,11 +52,19 @@
         <activity android:name=".HomeActivity" />
         <activity
             android:name=".WelCropActivity"
-            android:windowSoftInputMode="stateHidden|adjustPan"
-            android:label="@string/choose_crops" />
+            android:label="@string/choose_crops"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity
             android:name=".CitySelectActivity"
             android:label="@string/choose_city" />
+        <activity android:name=".LocationActivity" />
+        <activity android:name=".WeatherActivity" />
+        <activity android:name=".Weatherupdateactivity" />
+        <activity android:name=".DetailsActivity" />
+        <activity android:name=".NewsActivity" />
+        <activity android:name=".AreaActivity">
+
+        </activity>
     </application>
 
 </manifest>

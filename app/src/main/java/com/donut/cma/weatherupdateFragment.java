@@ -1,26 +1,23 @@
 package com.donut.cma;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link CropsFragment.OnFragmentInteractionListener} interface
+ * {@link weatherupdateFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link CropsFragment#newInstance} factory method to
+ * Use the {@link weatherupdateFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CropsFragment extends Fragment {
+public class weatherupdateFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -32,7 +29,7 @@ public class CropsFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public CropsFragment() {
+    public weatherupdateFragment() {
         // Required empty public constructor
     }
 
@@ -42,11 +39,11 @@ public class CropsFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment CropsFragment.
+     * @return A new instance of fragment weatherupdateFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static CropsFragment newInstance(String param1, String param2) {
-        CropsFragment fragment = new CropsFragment();
+    public static weatherupdateFragment newInstance(String param1, String param2) {
+        weatherupdateFragment fragment = new weatherupdateFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,22 +64,7 @@ public class CropsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_crops, container, false);
-
-        Button button = (Button) view.findViewById(R.id.calcAreaButton);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (Constants.DEBUG)
-                    Toast.makeText(getActivity(), "Works", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(), AreaActivity.class);
-
-                startActivity(intent);
-            }
-        });
-
-        return view;
+        return inflater.inflate(R.layout.fragment_weatherupdate, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -102,7 +84,6 @@ public class CropsFragment extends Fragment {
                     + " must implement OnFragmentInteractionListener");
         }
     }
-
 
     @Override
     public void onDetach() {
