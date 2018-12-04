@@ -60,6 +60,8 @@
             />
         <activity android:name=".Weatherupdateactivity"/>
         <activity android:name=".LocationActivity"/>
+        <activity android:name=".NewsActivity"/>
+        <activity android:name=".DetailsActivity"/>
     </application>
 
 </manifest>
